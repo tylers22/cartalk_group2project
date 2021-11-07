@@ -41,3 +41,6 @@ User.init(
       modelName: 'user'
     }
   );
+
+  //export to use in other part of the app
+module.exports = User;

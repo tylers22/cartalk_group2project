@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = require('./routes');
-const sequelize = require('./config/connection');
+const sequelize = require('config/connection');
+
 //route variables
 
 // Initialize the app and create a port

@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// create our Post model - define the post model 
+// create our Review model - define the review model 
 class Review extends Model {
   static upvote(body, models) {
     return models.Vote.create({
@@ -27,9 +27,9 @@ class Review extends Model {
   }
 }
 
-// definining columns for POST model ( naming conventions and intiailization)
+// definining columns for Review model ( naming conventions and intiailization)
 
-// create fields/columns for Post model
+// create fields/columns for Review model
 Review.init(
     {
       id: {
