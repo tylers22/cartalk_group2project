@@ -1,3 +1,9 @@
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create({});
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
 const express = require('express');
 const routes = require('./routes');
 const sequelize = require('./config/connection');
