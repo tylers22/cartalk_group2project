@@ -1,3 +1,4 @@
+/* Handlebars template */
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 
@@ -5,7 +6,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 const express = require('express');
-const routes = require('./routes');
+const routes = require('./controllers/');
 const sequelize = require('./config/connection');
 
 //route variables
@@ -17,6 +18,9 @@ const PORT = process.env.PORT || 3001;
 // Set up body parsing, static, and route middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Linking the style sheet //
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Front end code ( )
 app.use(express.static('public'));
@@ -33,3 +37,6 @@ app.get('/', (req, res) => {
 sequelize.sync({ force: false }).then(() => {
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
 });
+
+/* Linking the stylesheet */
+const path = require('path');

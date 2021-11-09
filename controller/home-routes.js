@@ -1,4 +1,6 @@
-/* Route to homepage */
+/* This file will contain all of the user-facing 
+routes, such as the homepage and login page 
+Still needs url */
 router.get('/', (req, res) => {
     res.render('homepage', {
       id: 1,
@@ -12,3 +14,11 @@ router.get('/', (req, res) => {
       }
     });
   });
+
+const router = require('express').Router();
+
+router.get('/', (req, res) => {
+  res.render('homepage');
+});
+
+module.exports = router;
