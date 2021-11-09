@@ -33,14 +33,16 @@ User.init(
         validate: {
           isEmail: true
         }
-      },
+      }
+    },
+  {
       sequelize,
       timestamps: false,
       freezeTableName: true,
       underscored: true,
       modelName: 'user'
     }
-  );
+    );
 
   //export to use in other part of the app
 module.exports = User;
