@@ -3,7 +3,10 @@ and will eventually respond with a View */
 const router = require('express').Router();
 
 const apiRoutes = require('./api');
+/* main homepage route */
+const homeRoutes = require('./home-routes.js');
 
+router.use('/', homeRoutes);
 // collects all the api endpoints and pre-fixes as /api
 router.use('/api', apiRoutes);
 
@@ -13,8 +16,3 @@ router.use((req, res) => {
 });
 
 module.exports = router;
-
-/* main homepage route */
-const homeRoutes = require('./home-routes.js');
-
-router.use('/', homeRoutes);
