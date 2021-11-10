@@ -14,9 +14,6 @@ const PORT = process.env.PORT || 3001;
 // for express-sessions library - store user cookies
 const session = require('express-session');
 
-/* Adding libraries in our app */
-const session = require('express-session');
-
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
