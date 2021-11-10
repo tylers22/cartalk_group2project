@@ -1,3 +1,5 @@
+/* Express routes take requests, communicate with the Models, 
+and will eventually respond with a View */
 const router = require('express').Router();
 
 const apiRoutes = require('./api');
@@ -11,3 +13,8 @@ router.use((req, res) => {
 });
 
 module.exports = router;
+
+/* main homepage route */
+const homeRoutes = require('./home-routes.js');
+
+router.use('/', homeRoutes);
