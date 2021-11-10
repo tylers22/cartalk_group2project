@@ -3,8 +3,8 @@ const Sequelize = require('sequelize');
 
 require('dotenv').config();
 
-// create connection to our database, pass in your MySQL information for username and password
-const sequelize = new Sequelize('cartalk2021_db', 'root', '1998Hlsg8sql', {
+// create connection to our database, pass in your MySQL information for username and password - Hibram: 1998Hlsg8sql
+const sequelize = new Sequelize('cartalk2021_db', 'root', 'Bootcamp2021!', {
     host: 'localhost',
     dialect: 'mysql',
     port: 3306

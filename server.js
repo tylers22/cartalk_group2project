@@ -4,7 +4,8 @@ const hbs = exphbs.create({});
 const express = require('express');
 const routes = require('./controller/');
 const sequelize = require('./config/connection');
-
+/* Linking the stylesheet */
+const path = require('path');
 //route variables
 
 // Initialize the app and create a port
@@ -36,5 +37,3 @@ sequelize.sync({ force: false }).then(() => {
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
 });
 
-/* Linking the stylesheet */
-const path = require('path');
