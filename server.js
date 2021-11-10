@@ -12,6 +12,23 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+/* Adding libraries in our app */
+const session = require('express-session');
+
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+app.use(session(sess));
+
 // Set up body parsing, static, and route middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
