@@ -9,7 +9,7 @@ const sequelize = process.env.AWS_HOST
         dialect: 'mysql',
         port: 3306
     })
-    : new Sequelize('cartalk2021_db', 'root', 'Bootcamp2021!', {
+    : new Sequelize('cartalk2021_db', 'root', '1998Hlsg8sql', {
         host: 'localhost',
         dialect: 'mysql',
         port: 3306

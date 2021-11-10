@@ -7,6 +7,7 @@ const router = require('express').Router();
 //   res.render('homepage');
 // });
 
+//move the review to a different page and restructure homepage
 router.get('/', (req, res) => {
   res.render('homepage', {
     id: 1,
@@ -20,6 +21,8 @@ router.get('/', (req, res) => {
     }
   });
 });
+
+//
 
 module.exports = router;
 

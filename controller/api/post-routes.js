@@ -32,6 +32,7 @@ router.get('/', (req, res) => {
     })
       .then(dbPostData => {
         // pass a single post object into the homepage template
+        //Check to see if we need to adjust [#] for multiple posts to be pulled
         console.log(dbPostData[0]);
         res.render('homepage', dbPostData[0].get({ plain: true}));
       })
