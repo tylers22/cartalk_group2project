@@ -82,6 +82,17 @@ router.post('/login', (req, res) => {
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
   });
+  /* Created logout */
+  router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    }
+    else {
+      res.status(404).end();
+    }
+  });
 });
 
   //Update (CRUD) update the a user's info
@@ -126,17 +137,6 @@ router.post('/login', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  });
-
-  router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-      req.session.destroy(() => {
-        res.status(204).end();
-      });
-    }
-    else {
-      res.status(404).end();
-    }
   });
   
 
