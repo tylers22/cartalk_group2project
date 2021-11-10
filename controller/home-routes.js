@@ -2,6 +2,9 @@
 routes, such as the homepage and login page 
 Still needs url */
 const router = require('express').Router();
+//importing the necessary modules and models
+const sequelize = require('../config/connection');
+const { Post, User, Comment } = require('../models');
 
 // router.get('/', (req, res) => {
 //   res.render('homepage');
@@ -22,10 +25,10 @@ router.get('/', (req, res) => {
   });
 });
 
-//
+/* Route renders login */
+router.get('/login', (req, res) => {
+  res.render('login');
+});
 
 module.exports = router;
 
-//importing the necessary modules and models
-const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
