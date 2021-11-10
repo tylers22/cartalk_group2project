@@ -1,10 +1,6 @@
 /* Handlebars template */
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
-
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
-
 const express = require('express');
 const routes = require('./controllers/');
 const sequelize = require('./config/connection');
@@ -19,6 +15,8 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 // Linking the style sheet //
 app.use(express.static(path.join(__dirname, 'public')));
 
