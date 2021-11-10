@@ -92,7 +92,10 @@
   }
   
   header h1 {
-    font-size: 1em;
+    font-size: 10em;
+    line-height: 1.6em;
+    border-radius: 10px;
+    border: 3px black solid;
   }
   
   main {
