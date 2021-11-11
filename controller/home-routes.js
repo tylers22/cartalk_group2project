@@ -15,15 +15,8 @@ review disappeared. maybe put into post-routes? */
 router.get('/', (req, res) => {
   console.log(req.session);
   res.render('homepage', {
-    id: 1,
-    post_url: '',
-    title: 'Car Review',
-    created_at: new Date(),
-    vote_count: 10,
-    comments: [{}, {}],
-    user: {
-      username: 'whitelotus32'
-    }
+    posts,
+    loggedIn: req.session.loggedIn
   });
 });
 
