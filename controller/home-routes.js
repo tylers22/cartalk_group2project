@@ -10,7 +10,8 @@ const { Post, User, Comment } = require('../models');
 //   res.render('homepage');
 // });
 
-//move the review to a different page and restructure homepage
+/* move the review to a different page and restructure homepage
+review disappeared. maybe put into post-routes? */
 router.get('/', (req, res) => {
   console.log(req.session);
   res.render('homepage', {
