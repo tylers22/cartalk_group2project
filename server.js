@@ -29,8 +29,6 @@ app.use(session(sess));
 
 const helpers = require('./utils/helpers');
 
-const hbs = exphbs.create({ helpers });
-
 // Set up body parsing, static, and route middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
