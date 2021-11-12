@@ -4,7 +4,8 @@
 <ol class="post-list">
   {{#each posts as |post|}}
   <li>
-    {{>post-info post }}
+    {{> post-info post}}
+    {{> single-post post}}
   </li>
   {{/each}}
 </ol>
