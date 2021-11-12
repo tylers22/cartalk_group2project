@@ -6,7 +6,6 @@ const routes = require('./controller/');
 const sequelize = require('./config/connection');
 /* Linking the stylesheet */
 const path = require('path');
-//route variables
 
 // Initialize the app and create a port
 const app = express();
@@ -27,6 +26,11 @@ const sess = {
 };
 
 app.use(session(sess));
+
+const helpers = require('./utils/helpers');
+
+const hbs = exphbs.create({ helpers });
+
 // Set up body parsing, static, and route middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
