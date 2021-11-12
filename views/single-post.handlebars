@@ -1,15 +1,4 @@
-<!-- Creating post forum -->
-<article class="post">
-  <div class="title">
-    <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
-    <span>({{post.post_url}})</span>
-  </div>
-  <div class="meta">
-  {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}}
-  |
-  <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-  </div>
-</article>
+{{> post-info post}}
 
 <!-- Adding layout to the post forum -->
 {{#if loggedIn}}
@@ -24,6 +13,8 @@
   </div>
 </form>
 {{/if}}
+
+{{> comments post.comments}}
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
