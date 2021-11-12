@@ -1,31 +1,14 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
 // ask TA to help get this GET route going / review M.13 Comment GET routes
-
-// router.get('/', (req, res) => {
-//     console.log('======================');
-//     Comment.findAll({
-//       attributes: [
-//         'id',
-//         'comment_text',
-//         'title',
-//         'created_at',
-//         [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-//       ],
-//       order: [['created_at', 'DESC']],
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['username']
-//         }
-//       ]
-//     })
-//       .then(dbPostData => res.json(dbPostData))
-//       .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//       });
-// });
+router.get('/', (req, res) => {
+  Comment.findAll()
+    .then(dbCommentData => res.json(dbCommentData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 router.post('/', (req, res) => {
   // check the session
