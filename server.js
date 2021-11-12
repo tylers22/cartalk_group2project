@@ -6,7 +6,6 @@ const routes = require('./controller/');
 const sequelize = require('./config/connection');
 /* Linking the stylesheet */
 const path = require('path');
-//route variables
 
 // Initialize the app and create a port
 const app = express();

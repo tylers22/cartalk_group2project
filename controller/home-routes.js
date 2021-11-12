@@ -5,11 +5,7 @@ Still needs url */
 const router = require('express').Router();
 //importing the necessary modules and models
 const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
-
-// router.get('/', (req, res) => {
-//   res.render('homepage');
-// });
+const { Post, User, Comment, Vote } = require('../models');
 
 /* move the review to a different page and restructure homepage
 review disappeared. maybe put into post-routes? */
