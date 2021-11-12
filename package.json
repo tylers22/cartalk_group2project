@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/tylers22/cartalk_group2project/issues"
   },
-  "homepage": "https://github.com/tylers22/cartalk_group2project#readme"
+  "homepage": "https://github.com/tylers22/cartalk_group2project#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
 }
