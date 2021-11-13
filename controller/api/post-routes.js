@@ -31,12 +31,7 @@ router.get('/', (req, res) => {
         }
       ]
     })
-      .then(dbPostData => {
-        // pass a single post object into the homepage template
-        //Check to see if we need to adjust [#] for multiple posts to be pulled
-        console.log(dbPostData[0]);
-        res.render('homepage', dbPostData[0].get({ plain: true}));
-      })
+      .then(dbPostData => res.json(dbPostData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -86,16 +81,18 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
-  Post.create({
-    title: req.body.title,
-    post_url: req.body.post_url,
-    user_id: req.session.user_id
-  })
-    .then(dbPostData => res.json(dbPostData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  if (req.session) {
+    Post.create({
+      title: req.body.title,
+      post_url: req.body.post_url,
+      user_id: req.session.user_id
+    })
+      .then(dbPostData => res.json(dbPostData))
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  }
 });
 
 router.put('/upvote', (req, res) => {
