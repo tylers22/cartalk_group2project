@@ -47,16 +47,6 @@ router.get('/', (req, res) => {
     });
 });
 
-/* Route renders login */
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-  
-  res.render('login');
-});
-
 /* Route renders single post forum */
 router.get('/post/:id', (req, res) => {
   Post.findOne({
@@ -103,6 +93,16 @@ router.get('/post/:id', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+
+/* Route renders login */
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  
+  res.render('login');
 });
 
 module.exports = router;
